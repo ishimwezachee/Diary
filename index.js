@@ -24,8 +24,11 @@ mongoose.connect(keys.mongoURI,{
     console.log('err');
 })
 
+//load routes;
+app.use("/api/users",require("./routes/User"));
+
 // set up this.props.
-const port = process.env.port || 3500;
+const port = process.env.port || 9050;
 app.listen(port,() =>{
     console.log(`server is running on port ${port}`);
 })
